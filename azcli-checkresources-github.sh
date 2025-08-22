@@ -6,9 +6,12 @@
 #az vm
 #az blob storage
 
+RESOURCE_GROUP=${1:-shellrs}
+STORAGE_ACCOUNT=${2:-asdfstor}
+
 set -x #debug mode 
 set -e #exist the script if there is an error
-set -o #pipefail 
+set -o pipefail 
 
 #list all vm 
 echo "list all vm"
@@ -16,7 +19,8 @@ az vm list --output table
 
 #list all vm in a resource group
 echo "list all vm in a resource group"
-az vm list --resource-group shellrs --output table
+#az vm list --resource-group shellrs --output table
+az vm list --resource-group "$RESOURCE_GROUP" --output table
 
 #list storage account
 echo "list storage account"
@@ -24,5 +28,6 @@ az storage account list --output table
 
 #list containers in the blob storage account
 echo "list containers in the blob storage account"
-az storage container list --account-name asdfstor --auth-mode login --output table
+#az storage container list --account-name asdfstor --auth-mode login --output table
+az storage container list --account-name "$STORAGE_ACCOUNT" --auth-mode login --output table
 
