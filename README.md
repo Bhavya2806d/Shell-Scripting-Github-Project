@@ -1,9 +1,27 @@
-In list-users-github.sh
-We will able to list the people who access to any repository in an organization.
-You need to pass two parameters- organization name followed repository name.
+1)In list-users-github.sh
+GitHub Repository Read Access Users Script
 
+Overview
+This Bash script lists all users with read access (pull permissions) to a given GitHub repository using the GitHub API.
+We will able to list the people who access to any repository in an organization.You need to pass two parameters- organization name followed repository name.
 
-In azcli-checkresources-github.sh
+Prerequisites
+-GitHub Personal Access Token (PAT)-with `repo` scope.
+-Azure CLI not required- (only GitHub API).
+-jq installed- sudo apt install jq -y
+
+Export your GitHub username and token as environment variables:
+export username="your_github_username"
+export token="your_github_pat"
+
+Usage
+-Make the script executable:
+chmod +x list-users-github.sh
+
+Run
+./list-users-github.sh <repo_owner> <repo_name>
+
+2)In azcli-checkresources-github.sh
 
 This Bash script lists Azure resources using the Azure CLI. It provides:
 - A list of all Virtual Machines (VMs)
