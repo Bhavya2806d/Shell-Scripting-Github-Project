@@ -1,4 +1,4 @@
-# We will able to list the people who access to any repository in an organization.
-
+#list-users-github.sh
+#We will able to list the people who access to any repository in an organization.
 #You need to pass two parameters- organization name followed repository name.
 
